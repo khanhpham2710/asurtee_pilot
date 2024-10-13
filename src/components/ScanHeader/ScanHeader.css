@@ -1,0 +1,22 @@
+#scan_header {
+    height: 68px;
+    margin: 0 0 30px;
+    padding: 2px 20px 2px;
+    background-color: #000;
+    position: relative;
+    top: 0;
+}
+
+#scan_header h2 {
+    width: 100%;
+    text-align: center;
+    font-family: NotoSansCJKKR-Black;
+    font-size: 20px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+}

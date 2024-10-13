@@ -1,0 +1,36 @@
+#scan_result {
+    /* background-image: ; */
+}
+
+#scan_title {
+    width: 100%;
+    margin: 43px auto 0;
+}
+
+#scan_title h2 {
+    text-align: center;
+    font-family: AppleSDGothicNeoB;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    /* color: #fff; */
+}
+
+#scan_result .result {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scan_result .result img {
+    width: 300px;
+    height: 422px;
+    margin: 44px 30px 0;
+    padding: 22px 19px 28px;
+    border: solid 7px #0068ff;
+}

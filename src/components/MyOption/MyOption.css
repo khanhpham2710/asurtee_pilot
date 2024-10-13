@@ -1,0 +1,44 @@
+.option {
+    width: 145px;
+    height: 152px;
+    padding: 22px 18px 23px 19px;
+    border-radius: 10px;
+    background-color: #feeed9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    cursor: pointer;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none; 
+    height: 100%;
+}
+
+.option img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 18px; 
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.option h5 {
+    font-family: BMDOHYEON;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000;
+    margin: 0; 
+}
