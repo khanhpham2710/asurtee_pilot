@@ -1,0 +1,7 @@
+.search_button{
+    height: 30px; 
+    width: 76px; 
+    border-radius: 50px !important; 
+    border: #ea3062 solid 1px !important;
+    padding: 0 !important
+}

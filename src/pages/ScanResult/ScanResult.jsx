@@ -1,21 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import ScanHeader from '../../components/ScanHeader/ScanHeader'
-import { Typography, Box } from '@mui/material'
+import { Typography, Box, Button } from '@mui/material'
 import "./ScanResult.css"
-import ScanTest from '../../components/ScanTest/ScanTest'
+import Camera from '../../components/Camera/Camera'
+import { useNavigate } from 'react-router-dom'
 
 
 function ScanResult() {
+    const cameraRef = useRef();
+    const [url, setUrl] = useState(null);
+    const navigate = useNavigate()
+
+    const handleCapture = async () => {
+        if (cameraRef.current) {
+            await cameraRef.current.capturePhoto();
+            navigate("/result")
+        }
+    };
+
+    useEffect(() => {
+        if (url) {
+            sessionStorage.setItem("url", url)
+        }
+    }, [url]);
 
     return (
         <Box id="scan_result">
             <ScanHeader title="사업자등록증 촬영" />
             <Box id="scan_title">
-                <Typography variant='h2'>카메라로 사업자등록증을 자동 활영합니다.</Typography>
-                <Typography variant='h2'>사각형에 맞게 놓아주세요.</Typography>
+                <Typography variant='h2'>카메라로 사업자등록증을 자동 활영합니다. <br /> 사각형에 맞게 놓아주세요.</Typography>
             </Box>
-            <Box className="result">
-                <ScanTest />
+            <Box id="camera">
+                <Camera ref={cameraRef} setUrl={setUrl} />
+            </Box>
+            <Box sx={{width: "100%", display: "flex", justifyContent: "center"}}>
+                <Button sx={{ m: "30px auto", width: "90px", p: "10px" }} onClick={handleCapture} variant="contained">Capture</Button>
             </Box>
         </Box>
     )

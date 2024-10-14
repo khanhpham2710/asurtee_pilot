@@ -13,30 +13,11 @@
     border: solid 2px transparent;
 }
 
-#button {
+.option_button {
     position: absolute;
-    bottom: 30px;
+    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#button .button {
-    width: 300px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #c8c8c8;
-    font-family: AppleSDGothicNeoEB;
-    font-size: 16px;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.22;
-    letter-spacing: normal;
-    text-align: center;
-    color: #fff;
-}
-
-#button .active {
-    background-color: #ff8d02;
 }

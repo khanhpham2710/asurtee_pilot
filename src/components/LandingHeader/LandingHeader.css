@@ -1,0 +1,37 @@
+header {
+    height: 68px;
+    margin: 0 0 30px;
+    padding: 24px 20px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+header .logo1 {
+    width: 89px;
+    height: 20px;
+    flex-grow: 0;
+    margin: 0 7px 0 0;
+    object-fit: contain;
+}
+
+header .logo2 {
+    width: 8px;
+    height: 8px;
+    flex-grow: 0;
+    margin: 5px 7px 0px 0;
+    object-fit: contain;
+    transform: rotate(-180deg);
+    opacity: 0.6;
+    /* background-color: #000; */
+}
+
+header .logo3 {
+    width: 93.9px;
+    height: 14px;
+    flex-grow: 0;
+    object-fit: contain;
+}

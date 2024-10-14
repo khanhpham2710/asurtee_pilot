@@ -7,95 +7,95 @@
 
 @font-face {
   font-family: 'AppleSDGothicNeoB';
-  src: url('font/AppleSDGothicNeoB.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoB.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoEB';
-  src: url('font/AppleSDGothicNeoEB.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoEB.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoH';
-  src: url('font/AppleSDGothicNeoH.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoH.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoL';
-  src: url('font/AppleSDGothicNeoL.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoL.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoM';
-  src: url('font/AppleSDGothicNeoM.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoM.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoR';
-  src: url('font/AppleSDGothicNeoR.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoR.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoSB';
-  src: url('font/AppleSDGothicNeoSB.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoSB.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoT';
-  src: url('font/AppleSDGothicNeoT.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoT.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeoUL';
-  src: url('font/AppleSDGothicNeoUL.ttf') format('truetype');
+  src: url('/font/AppleSDGothicNeoUL.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'BMDOHYEON';
-  src: url('font/BMDOHYEON_otf.otf') format('opentype');
+  src: url('/font/BMDOHYEON_otf.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-Black';
-  src: url('font/NotoSansCJKkr-Black.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-Black.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-Bold';
-  src: url('font/NotoSansCJKkr-Bold.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-Bold.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-DemiLight';
-  src: url('font/NotoSansCJKkr-DemiLight.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-DemiLight.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-Light';
-  src: url('font/NotoSansCJKkr-Light.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-Light.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-Medium';
-  src: url('font/NotoSansCJKkr-Medium.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-Medium.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-Regular';
-  src: url('font/NotoSansCJKkr-Regular.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansCJKkr-Thin';
-  src: url('font/NotoSansCJKkr-Thin.otf') format('opentype');
+  src: url('/font/NotoSansCJKkr-Thin.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansMonoCJKkr-Bold';
-  src: url('font/NotoSansMonoCJKkr-Bold.otf') format('opentype');
+  src: url('/font/NotoSansMonoCJKkr-Bold.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NotoSansMonoCJKkr-Regular';
-  src: url('font/NotoSansMonoCJKkr-Regular.otf') format('opentype');
+  src: url('/font/NotoSansMonoCJKkr-Regular.otf') format('opentype');
 }

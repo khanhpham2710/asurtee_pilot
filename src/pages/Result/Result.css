@@ -1,0 +1,23 @@
+#result{
+    width: 300px;
+    margin: 30px auto 0;
+}
+
+#result h1 {
+    font-family: AppleSDGothicNeoH;
+    font-size: 24px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.result_button {
+    margin-top: 66px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

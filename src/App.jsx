@@ -3,17 +3,19 @@ import LandingPage from "./pages/LandingPage/LandingPage"
 import Submit from "./pages/Submit/Submit"
 import Scan from "./pages/Scan/Scan"
 import ScanResult from "./pages/ScanResult/ScanResult"
-import ScanTest from "./components/ScanTest/ScanTest"
+import Result from "./pages/Result/Result"
 
 function App() {
   return (
     <div>
-      <Router basename="asurtee_pilot">
+      <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/scan" element={<Scan />} />
-          <Route path="/result" element={<ScanResult />} />
+          <Route path="/scanning" element={<ScanResult />} />
+          <Route path="/result" element={<Result />} />
+          <Route path="/result/:number" element={<Result />} />
         </Routes>
       </Router>
     </div>
