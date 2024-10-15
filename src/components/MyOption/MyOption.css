@@ -12,15 +12,6 @@
     cursor: pointer;
 }
 
-.link {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    text-decoration: none; 
-    height: 100%;
-}
-
 .option img {
     max-width: 100%;
     height: auto;
@@ -40,5 +31,5 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #000;
-    margin: 0; 
+    margin: 0
 }

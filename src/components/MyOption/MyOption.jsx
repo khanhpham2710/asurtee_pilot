@@ -14,8 +14,7 @@ function MyOption({ image, line1, line2, link }) {
         <Box className='option' onClick={handeleClick}>
             <img src={image} alt={line1} />
             <Box className='text-container'>
-                <Typography variant='h5'>{line1}</Typography>
-                <Typography variant='h5'>{line2}</Typography>
+                <Typography variant='h5'>{line1} <br /> {line2}</Typography>
             </Box>
         </Box>
     );

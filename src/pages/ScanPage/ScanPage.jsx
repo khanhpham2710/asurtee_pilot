@@ -56,13 +56,13 @@ function ScanPage() {
             <Box id="camera">
                 <Camera ref={cameraRef} setUrl={setUrl} />
             </Box>
-            <div>
+            {/* <div>
                 {Object.entries(infos).map(([key, value]) => (
                     <p key={key}>
                         <strong>{key}:</strong> {String(value)}
                     </p>
                 ))}
-            </div>
+            </div> */}
         </Box>
     )
 }

@@ -6,10 +6,10 @@ const ScanComponent = ({ url, infos, setInfos }) => {
   const { number } = useParams()
 
   const removeParentheses = (text) => {
-    const index = text.indexOf('(');
+    const index = text.indexOf('(') || text.indexOf('[');
     if (index !== -1) {
         const outside = text.slice(0, index).trim();
-        const inside = text.slice(index + 1, text.indexOf(')')).trim(); 
+        const inside = text.slice(index + 1, text.indexOf(')') || text.index(']')).trim(); 
         return { outside, inside }; 
     }
     return { outside: text.trim(), inside: null }; 
