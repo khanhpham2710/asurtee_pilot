@@ -58,7 +58,6 @@ function Submit() {
     const result = row1 + "-" + row2 + "-" + row3;
 
     window.alert(result);
-    navigate("/result/" + result)
   };
 
 

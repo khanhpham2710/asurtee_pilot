@@ -1,0 +1,28 @@
+#scan_title {
+    width: 100%;
+    margin: 43px auto 0;
+}
+
+#scan_title h2 {
+    text-align: center;
+    font-family: AppleSDGothicNeoB;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    /* color: #fff; */
+}
+
+#camera{
+    height: 422px;
+    width: 300px; 
+    border: solid 7px #0068ff;
+    padding: 22px 18.9px 28px 19.9px;
+    margin: 44px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

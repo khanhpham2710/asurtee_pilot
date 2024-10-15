@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { createWorker } from 'tesseract.js';
-import "./ScanTest.css";
 import { useParams } from 'react-router-dom';
 
-const ScanTest = ({ setInfos }) => {
+const ScanComponent = ({ setInfos }) => {
   const [file, setFile] = useState(null);
   const { number } = useParams()
   const [text, setText] = useState(null)
@@ -26,7 +25,7 @@ const ScanTest = ({ setInfos }) => {
 
     const result = {
       계약자: null || "not_yet",
-      등록번호: registrationNumberMatch ? registrationNumberMatch[1] : "failed",
+      등록번호: registrationNumberMatch ? registrationNumberMatch[1] : number ? number : "failed",
       "상호(법인)명": businessNameMatch ? businessNameMatch[1] : "failed",
       주소: addressMatch ? addressMatch[1].trim() : "failed",
       extra: null || "not_yet"
@@ -79,4 +78,4 @@ const ScanTest = ({ setInfos }) => {
   );
 };
 
-export default ScanTest;
+export default ScanComponent;
