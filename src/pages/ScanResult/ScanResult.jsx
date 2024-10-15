@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LandingHeader from '../../components/LandingHeader/LandingHeader';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
@@ -9,6 +9,12 @@ import ScanComponent from '../../components/ScanComponent/ScanComponent';
 
 function Result() {
     const [infos, setInfos] = useState()
+
+    useEffect(()=>{
+        const temp = sessionStorage.getItem("infos")
+        setInfos(JSON.parse(temp))
+    },[])
+
 
     const labelStyle = {
         fontFamily: "AppleSDGothicNeoM",

@@ -8,8 +8,8 @@ const Camera = React.forwardRef((props, ref) => {
     const navigate = useNavigate()
 
     const videoConstraints = {
-        width: 1280, 
-        height: 720,
+        // width: 1280, 
+        // height: 720,
         facingMode: "environment"
     };
 
@@ -21,21 +21,7 @@ const Camera = React.forwardRef((props, ref) => {
     useImperativeHandle(ref, () => ({
         capturePhoto
     }));
-
-    const handleKeyPress = async (event) => {
-        if (event.key === ' ' || event.key === 'Enter') {
-            event.preventDefault();
-            await capturePhoto();
-            navigate("/result")
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyPress);
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
+    
 
     return (
         <Webcam

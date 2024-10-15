@@ -2,78 +2,78 @@ import React, { useState, useEffect } from 'react';
 import { createWorker } from 'tesseract.js';
 import { useParams } from 'react-router-dom';
 
-const ScanComponent = ({ setInfos }) => {
-  const [file, setFile] = useState(null);
+const ScanComponent = ({ url, infos, setInfos }) => {
   const { number } = useParams()
-  const [text, setText] = useState(null)
 
-  useEffect(() => {
-    const url = sessionStorage.getItem("url");
-    if (url) {
-      setFile(url);
+  const removeParentheses = (text) => {
+    const index = text.indexOf('(');
+    if (index !== -1) {
+        const outside = text.slice(0, index).trim();
+        const inside = text.slice(index + 1, text.indexOf(')')).trim(); 
+        return { outside, inside }; 
     }
-  }, []);
+    return { outside: text.trim(), inside: null }; 
+}
 
-  const extractBusinessInfo = (text) => {
-    const registrationNumberRegex = /등록번호\s*:\s*([\d-]+)/;
-    const businessNameRegex = /법인명\(단체명\)\s*:\s*(.*)/;
-    const addressRegex = /사업장 소재지\s*:\s*([\s\S]*?)(?:본 점 소 재 지|$)/;
+  const extractBusinessInfo = async (lines) => {
+    const registrationNumberRegex = /등록번호\s*:\s*(\d{3}-\d{2}-\d{5})/;
+    const businessNameRegex = /\(단체명\)\s*:\s*(.+)/;
+    const addressRegex = /소재지\s*:\s*([\s\S]*?)(?:본 점 소 재 지|$)/;
 
-    const registrationNumberMatch = text.match(registrationNumberRegex);
-    const businessNameMatch = text.match(businessNameRegex);
-    const addressMatch = text.match(addressRegex);
+    for (let i of lines) {
+      if (i.confidence >= 60) { 
+        console.log(i.text)
 
-    const result = {
-      계약자: null || "not_yet",
-      등록번호: registrationNumberMatch ? registrationNumberMatch[1] : number ? number : "failed",
-      "상호(법인)명": businessNameMatch ? businessNameMatch[1] : "failed",
-      주소: addressMatch ? addressMatch[1].trim() : "failed",
-      extra: null || "not_yet"
-    };
+        const registrationNumberMatch = i.text.match(registrationNumberRegex);
+        const businessNameMatch = i.text.match(businessNameRegex);
+        const addressMatch = i.text.match(addressRegex);
 
-    setInfos(result);
-    setText({
-      hang1: registrationNumberMatch,
-      hang2: businessNameMatch,
-      hang3: addressMatch
-    });
+        if (registrationNumberMatch && !infos.등록번호) {
+          await setInfos((prev) => ({ ...prev, 등록번호: registrationNumberMatch[1] }));
+        }
+        else if (businessNameMatch && !infos["상호(법인)명"]) {
+          const { outside } = removeParentheses(businessNameMatch[1]);
+          setInfos((prev) => ({ ...prev, "상호(법인)명": outside }));
+        }
+        else if (addressMatch && !infos.주소) {
+          const { outside, inside } = removeParentheses(addressMatch[1]);
+          await setInfos((prev) => ({ ...prev, 주소: outside, extra: inside }));
+        }
+      }
+    }
   };
 
 
   useEffect(() => {
     const handleOcr = async () => {
-      if (!file) return;
+      if (!url) return;
       try {
-        const text = await performOCR(file);
-        extractBusinessInfo(text);
+        const lines = await performOCR(url)
+        extractBusinessInfo(lines)
       } catch (error) {
         console.error("OCR Error:", error);
       }
     };
 
     handleOcr();
-  }, [file]);
+  }, [url]);
 
   const performOCR = async (image) => {
-    const worker = await createWorker('kor+eng', 1, {
+    const worker = await createWorker('kor', 1, {
       logger: (m) => {
         if (m.status === 'recognizing text') {
           // setLoadingText(`Processing... ${Math.round(m.progress * 100)}%`);
         }
       },
     });
-    const { data: { text } } = await worker.recognize(image);
+    const { data: { text, block, lines } } = await worker.recognize(image);
     await worker.terminate();
-    return text;
+    // return text;
+    return lines
   };
 
   return (
     <>
-      {text && <div>
-        <p>{text?.hang1}</p>
-        <p>{text?.hang2}</p>
-        <p>{text?.hang3}</p>
-      </div>}
     </>
   );
 };

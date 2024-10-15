@@ -51,7 +51,8 @@
     margin-top: 32px;
     display: flex; 
     flex-Direction: row; 
-    justify-Content: space-around
+    justify-Content: space-around;
+    gap: 10px;
 }
 
 img#city {
